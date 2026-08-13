@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>繁體字筆劃收集</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>繁體字筆劃收集</h1>
+      <p class="notice">請用 Apple Pencil 或手指，按畫面上的字書寫。資料只留在這部裝置，直至你按「下載資料」。</p>
+      <section class="card">
+        <div class="target-row">
+          <span>請寫：</span><output id="target" aria-label="目標字"></output>
+          <span id="progress"></span>
+        </div>
+        <canvas id="canvas" width="800" height="800" aria-label="手寫區"></canvas>
+        <div class="controls">
+          <button id="undo" type="button">復原一劃</button>
+          <button id="clear" type="button">重新寫</button>
+          <button id="save" type="button" class="primary">儲存下一個字</button>
+        </div>
+      </section>
+      <section class="card small">
+        <label>匿名書寫者代號 <input id="writer" maxlength="30" placeholder="例如 friend-01" /></label>
+        <button id="download" type="button">下載已收集資料</button>
+        <p id="status" role="status"></p>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
