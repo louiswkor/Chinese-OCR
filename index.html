@@ -11,6 +11,12 @@
       <h1>繁體字筆劃收集</h1>
       <p class="notice">請用 Apple Pencil 或手指，按畫面上的字書寫。資料只留在這部裝置，直至你按「下載資料」。</p>
       <section class="card">
+        <label class="tool-choice">書寫工具
+          <select id="input-mode">
+            <option value="pen" selected>只用 Apple Pencil（建議）</option>
+            <option value="any">Apple Pencil 或手指</option>
+          </select>
+        </label>
         <div class="target-row">
           <span>請寫：</span><output id="target" aria-label="目標字"></output>
           <span id="progress"></span>
@@ -24,7 +30,11 @@
       </section>
       <section class="card small">
         <label>匿名書寫者代號 <input id="writer" maxlength="30" placeholder="例如 friend-01" /></label>
-        <button id="download" type="button">下載已收集資料</button>
+        <div class="export-controls">
+          <button id="icloud" type="button" class="primary">儲存到 iCloud Drive</button>
+          <button id="download" type="button">下載資料</button>
+        </div>
+        <p class="hint">首次使用：在分享視窗選「儲存到檔案」→「iCloud Drive」→ 建立或選擇 <strong>Chinese-OCR</strong> 資料夾。</p>
         <p id="status" role="status"></p>
       </section>
     </main>
